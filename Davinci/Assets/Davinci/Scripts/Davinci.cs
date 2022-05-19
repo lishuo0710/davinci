@@ -483,15 +483,25 @@ public class Davinci : MonoBehaviour
                     break;
 
                 case RendererType.uiImage:
-                    Image image = targetObj.GetComponent<Image>();
+                    MaskableGraphic image = null;
+                    if (targetObj.GetComponent<RawImage>())
+                    {
+                        var rawImage = targetObj.GetComponent<RawImage>();
+                        rawImage.texture = texture;
+                        image = rawImage;
+                    }
+                    else if (targetObj.GetComponent<Image>())
+                    {
+                        var currentImage = targetObj.GetComponent<Image>();
+                        Sprite sprite = Sprite.Create(texture,
+                             new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
+                        currentImage.sprite = sprite;
+                        image = currentImage;
+                    }
 
                     if (image == null)
                         break;
 
-                    Sprite sprite = Sprite.Create(texture,
-                        new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
-
-                    image.sprite = sprite;
                     color = image.color;
                     maxAlpha = color.a;
 
