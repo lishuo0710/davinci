@@ -118,6 +118,8 @@ TODO
 ----
  - Add support for textures ✅ 
  - Improvements
+ - cache invalid time
+ - update cache
 
 License
 ----
