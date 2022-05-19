@@ -91,7 +91,7 @@ Davinci.ClearAllCachedFiles();
 ```
 
 Also:
-- Supports Unity UI Image Component
+- Supports Unity UI Image/RawImage Component
 - Compatible with all platforms and unity versions.
 
 ### Supporting Platforms
