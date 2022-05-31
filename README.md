@@ -45,7 +45,7 @@ Davinci.get()
 ```csharp
 Davinci.get()
     .load(imageUrl)
-    .into(image)
+    .into(image)//or rawimage
     .withStartAction(() =>
     {
         Debug.Log("Download has been started.");
@@ -116,10 +116,9 @@ Make a change in your file and instantaneously see your updates!
 
 TODO
 ----
- - Add support for textures ✅ 
  - Improvements
  - cache invalid time
- - update cache
+ - update cache(LRU etc)
 
 License
 ----
